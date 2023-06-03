@@ -1,5 +1,4 @@
-
-
+'use client';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import MoneyIcon from '@mui/icons-material/Money';
 import LocalAirportIcon from '@mui/icons-material/LocalAirport';

@@ -8,7 +8,7 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import TranslateIcon from '@mui/icons-material/Translate';
 
-const JobInfoCard = () => {
+const JobInfoCard = ({job}: any) => {
   return (
     <Paper className="w-[95%] flex flex-col p-5 gap-y-4 my-5 m-auto rounded-md" style={{boxShadow: "rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.3) 0px 12px 24px -4px"}}>
             <div className="flex items-start gap-x-4">

@@ -5,7 +5,7 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Link from 'next/link';
 
-const JobHeader = () => {
+const JobHeader = ({job}: any) => {
   return (
     <main  className={styles.header} style={{height: "85vh"}}>
 
@@ -20,20 +20,20 @@ const JobHeader = () => {
         </Link>
         <span className="bg-gray-400 w-[4px] h-[4px] rounded-full"></span>
         <Link href="/3">
-        <p className="text-white">Marketing Coordinator</p>
+        <p className="text-white">{job?.positionNeeded || "Marketing Coordinator"}</p>
         </Link>        </div> 
         <h1 className='text-white text-3xl font-semibold ml-4 py-5'>
-            Marketing Coordinator
+        {job?.positionNeeded || "Marketing Coordinator"}
         </h1>
         <div>
-        <p className='text-gray-400 flex gap-3 items-center ml-4 font-semibold py-4'><WorkIcon /> Design</p>
-        <p className='text-gray-400 flex gap-3 items-center ml-4 font-semibold py-4'><RemoveRedEyeIcon /> 420 views</p>
-        <p className='text-gray-400 flex gap-3 items-center ml-4 font-semibold py-4'><LocationOnIcon /> Kenya</p>
+        <p className='text-gray-400 flex gap-3 items-center ml-4 font-semibold py-4'><WorkIcon /> {job?.category}</p>
+        <p className='text-gray-400 flex gap-3 items-center ml-4 font-semibold py-4'><RemoveRedEyeIcon />{job?.views || "420"} views</p>
+        <p className='text-gray-400 flex gap-3 items-center ml-4 font-semibold py-4'><LocationOnIcon />{job?.location || "Kenya"}</p>
 
         </div>
         <div className='w-[300px] flex flex-col'>
             <button className='w-[260px] h-[32px] px-6 py-6 bg-[rgb(250,84,28)] text-white rounded-md m-5 mb-4 font-semibold flex items-center justify-center'>Apply Now</button>
-            <p className='text-white text-center'>Expiration date: <span className='text-orange-600'>02 Jun 2023</span></p>
+            <p className='text-white text-center'>Expiration date: <span className='text-orange-600'>{job?.datePosted}</span></p>
 
         </div>
 </section>
